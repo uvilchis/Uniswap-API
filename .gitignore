@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# stuff I don't want uploaded
+**/key.js
