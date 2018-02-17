@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-// import the schemas here when they have been created
-
+const TokenSchema = require('./models/token');
+const EventSchema = require('./models/event');
 
 const DB_CREDENTIALS = require('../env/key.js').mongo_creds;
 
@@ -14,5 +14,4 @@ mongoose.connect(DB_CREDENTIALS);
 module.exports = {
   mongoose,
   db
-}
-
+};
