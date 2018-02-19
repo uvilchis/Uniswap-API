@@ -1,0 +1,17 @@
+
+type Token {
+  id: ID!
+  tokenAdress: String! 
+  symbol: String!
+}
+
+input NewToken {
+  id: ID!
+  tokenAdress: String!
+  symbol: String!
+}
+
+extend type Query {
+  Token(id: ID!): Token!
+  allTokens: [Token]!
+}
