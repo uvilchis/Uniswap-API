@@ -1,0 +1,22 @@
+type Event {
+  id: ID!
+  ethInMarket: Int!
+  tokensInMarket: Int!
+  invariant: Int!
+  ethValueOfToken: Int!
+  timestamp: String!
+}
+
+input NewEvent {
+  id: ID!
+  ethInMarket: Int!
+  tokensInMarket: Int!
+  invariant: Int!
+  ethValueOfToken: Int!
+  timestamp: Int!
+}
+
+type Query {
+  Event(id: ID!): Event!
+  allEvents: [Event]!
+}
