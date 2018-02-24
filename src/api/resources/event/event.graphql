@@ -1,22 +1,26 @@
 type Event {
-  id: ID!
-  ethInMarket: Int!
-  tokensInMarket: Int!
-  invariant: Int!
-  ethValueOfToken: Int!
-  timestamp: String!
+  symbol: String!
+  ethInMarket: String!
+  tokensInMarket: String!
+  invariant: String!
+  ethValueOfToken: String!
+  createdAt: String
 }
 
 input NewEvent {
-  id: ID!
-  ethInMarket: Int!
-  tokensInMarket: Int!
-  invariant: Int!
-  ethValueOfToken: Int!
-  timestamp: Int!
+  symbol: String!
+  ethInMarket: String!
+  tokensInMarket: String!
+  invariant: String!
+  ethValueOfToken: String!
 }
 
 extend type Query {
-  Event(id: ID!): Event!
-  allEvents: [Event]!
+  Event(input: String!): [Event]!
 }
+
+extend type Mutation {
+  addEvent(input: NewEvent!): Event!
+}
+
+
