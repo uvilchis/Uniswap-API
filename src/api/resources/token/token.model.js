@@ -13,5 +13,11 @@ const tokenSchema = new mongoose.Schema({
       required: [true, 'Token must have a name']
     }
 });
+// tokens will need 
+// to be added 
+// to be updated 
+
+
 
 export const Token = mongoose.model('token', tokenSchema);
+
