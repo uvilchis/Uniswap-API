@@ -2,7 +2,6 @@ import { Token } from './token.model'
 import merge from 'lodash.merge'
 
 const addToken = (__, {input}) => {
-  console.log('this shit is working', input)
   return Token.create(input)
 }
 
