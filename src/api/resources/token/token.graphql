@@ -1,17 +1,20 @@
 
 type Token {
   id: ID!
-  tokenAdress: String! 
+  tokenAddress: String! 
   symbol: String!
 }
 
 input NewToken {
-  id: ID!
-  tokenAdress: String!
+  tokenAddress: String!
   symbol: String!
 }
 
-extend type Query {
-  Token(id: ID!): Token!
-  allTokens: [Token]!
+type Query {
+  Token(input: String!): Token!
+}
+
+type Mutation {
+  addToken(input: NewToken!): Token!
+  removeToken(symbol: String!): Token!
 }

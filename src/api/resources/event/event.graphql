@@ -16,7 +16,7 @@ input NewEvent {
   timestamp: Int!
 }
 
-type Query {
+extend type Query {
   Event(id: ID!): Event!
   allEvents: [Event]!
 }
