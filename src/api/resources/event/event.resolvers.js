@@ -5,10 +5,10 @@ const addEvent = (__, {input}) => {
   return Event.create(input)
 }
 
+// very prototypical query - events will need to be pulled by symbol, and ordered by time 
 const getEvents = (__,{input}) => {
   return Event.find({"symbol": input})
 }
-
 
 // delete an event 
 // FOR TESTING PURPOSES
@@ -19,7 +19,6 @@ const getEvents = (__,{input}) => {
 
 // we will however, need a function that goes back at the end of each day 
 // and then truncates the four data points from a minute down to one 
-
 
 // TODO: RETRIEVE EVENTS BY TOKEN BY TIME 
 
