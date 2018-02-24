@@ -1,5 +1,4 @@
 import { Token } from './token.model'
-import merge from 'lodash.merge'
 
 const addToken = (__, {input}) => {
   return Token.create(input)
@@ -9,6 +8,7 @@ const getToken = (__, {input}) => {
   return Token.findOne({ 'symbol': input })
 }
 
+// Would you ever need to remove tokens outside of testing environments?
 const removeToken = (__, {symbol}) => {
   return Token.findOneAndRemove({"symbol": symbol}).exec()
 }

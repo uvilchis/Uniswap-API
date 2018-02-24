@@ -1,6 +1,6 @@
 import { makeExecutableSchema } from 'graphql-tools';
 import { tokenType, tokenResolvers } from './resources/token';
-import { eventType } from './resources/event';
+import { eventType, eventResolvers } from './resources/event';
 import { graphqlExpress } from 'apollo-server-express';
 import merge from 'lodash.merge'
 
@@ -19,7 +19,8 @@ export const schema = makeExecutableSchema({
   ],
   resolvers: merge (
     {},
-    tokenResolvers
+    tokenResolvers,
+    eventResolvers
   )
 })
 
