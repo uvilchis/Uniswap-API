@@ -10,9 +10,9 @@ export const setGlobalMiddleware = (app) => {
 
 export const uniEventListener = () => {
   setInterval(async() => {
-    var ethInMarket = await listeners.getMarketEth()
-    var tokensInMarket = await listeners.getMarketTokens()
-    var invariant = await listeners.getInvariant()
+    var ethInMarket = await listeners.getUniMarketEth()
+    var tokensInMarket = await listeners.getMarketUniTokens()
+    var invariant = await listeners.getUniInvariant()
     
     let ethValueOfTokenCalculation = () => {
       let ethIn = 1*10**18;
@@ -33,7 +33,37 @@ export const uniEventListener = () => {
   
     post.postToEvents("UNI", ethInMarket, tokensInMarket, invariant, ethValueOfToken)
 
-  }, 5000)
+  }, 15000)
 }
+
+
+export const swtEventListener = () => {
+  setInterval(async() => {
+    var ethInMarket = await listeners.getSwtMarketEth()
+    var tokensInMarket = await listeners.getMarketSwtTokens()
+    var invariant = await listeners.getSwtInvariant()
+    
+    let ethValueOfTokenCalculation = () => {
+      let ethIn = 1*10**18;
+      let fee = ethIn/500;
+      let marketEth = +ethInMarket
+      let marketTokens = +tokensInMarket
+      let invar = +invariant
+      let newEthInMarket = marketEth + ethIn - fee;
+      let newTokensInMarket = invar/newEthInMarket;
+      let tokensOut = marketTokens - newTokensInMarket;
+      
+      let tokensForEth = tokensOut/ethIn;
+      
+      return JSON.stringify(ethIn/tokensOut)
+    }
+    
+    let ethValueOfToken = ethValueOfTokenCalculation()
+  
+    post.postToEvents("SWT", ethInMarket, tokensInMarket, invariant, ethValueOfToken)
+
+  }, 15000)
+}
+
 
 
