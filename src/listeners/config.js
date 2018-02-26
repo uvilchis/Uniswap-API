@@ -38,4 +38,4 @@ export const exchangeABI = [
   {"indexed":true,"name":"sharesBurned","type":"uint256"}],"name":"Divestment","type":"event"}
 ]
 
-export const uniExchangeAddress = '0xcDc30C3b02c5776495298198377D2Fc0fd6B1F1C';
+
