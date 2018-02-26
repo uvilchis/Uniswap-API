@@ -3,6 +3,7 @@ import { setGlobalMiddleware, uniEventListener } from './middleware';
 import { graphQLRouter } from './api';
 import { graphiqlExpress } from 'apollo-server-express';
 import { connect } from './db';
+import cors from 'cors';
 
 const app = express();
 
@@ -10,7 +11,7 @@ setGlobalMiddleware(app);
 connect();
 uniEventListener();
 
-app.use('/graphql', graphQLRouter);
+app.use('/graphql', cors(), graphQLRouter);
 app.use('/docs', graphiqlExpress({ endpointURL: '/graphql' }));
 
 app.all("*", (req, res) => {
