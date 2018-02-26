@@ -1,15 +1,14 @@
 import express from 'express';
-import setupMiddleware from './middleware';
+import { setGlobalMiddleware, uniEventListener } from './middleware';
 import { graphQLRouter } from './api';
 import { graphiqlExpress } from 'apollo-server-express';
 import { connect } from './db';
-import * as listeners from './listeners'
 
 const app = express();
 
-setupMiddleware(app);
+setGlobalMiddleware(app);
 connect();
-listeners.uniListener();
+uniEventListener();
 
 app.use('/graphql', graphQLRouter);
 app.use('/docs', graphiqlExpress({ endpointURL: '/graphql' }));
