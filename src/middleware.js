@@ -26,7 +26,7 @@ export const uniEventListener = () => {
       
       let tokensForEth = tokensOut/ethIn;
       
-      return ethIn/tokensOut
+      return JSON.stringify(ethIn/tokensOut)
     }
     
     let ethValueOfToken = ethValueOfTokenCalculation()

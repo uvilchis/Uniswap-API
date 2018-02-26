@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const addEvent = `mutation addEvent($input:NewEvent!){
+export const query = `mutation addEvent($input:NewEvent!){
   addEvent(input:$input){
     symbol
     ethInMarket
@@ -11,17 +11,19 @@ export const addEvent = `mutation addEvent($input:NewEvent!){
 }`;
 
 export const postToEvents = (symbol, ethInMarket, tokensInMarket, invariant, ethValueOfToken) => {
-  let variables = {
+  let variables = JSON.stringify({input: {
     symbol: symbol,
     ethInMarket: ethInMarket,
     tokensInMarket: tokensInMarket,
     invariant: invariant,
     ethValueOfToken: ethValueOfToken
-  }
-
+  }});
+  
   axios.post('http://localhost:3000/graphql', {
-    data: JSON.stringify({addEvent, variables})
-  }).then(res => console.log('it works!', res))
-  .catch(err => console.log('BIG ERROR', err))
+    query: query,
+    variables: variables
+  }).then((res) => console.log(res.data, 'post confirmed'))
+  .catch(err => console.log(err.data, 'ERROR '))
+
 }
 
