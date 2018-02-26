@@ -23,7 +23,9 @@ export const uniEventListener = () => {
       let newEthInMarket = marketEth + ethIn - fee;
       let newTokensInMarket = invar/newEthInMarket;
       let tokensOut = marketTokens - newTokensInMarket;
+      
       let tokensForEth = tokensOut/ethIn;
+      
       return ethIn/tokensOut
     }
     
