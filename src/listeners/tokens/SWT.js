@@ -5,6 +5,8 @@ const web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io
 const swtExchangeAddress = '0x4632a7Cd732c625dcc48d75E289c209422e1D2B7';
 const swtExchangeContract = new web3.eth.Contract(exchangeABI, swtExchangeAddress);
 
+export const swtDecimals = 10**18;
+
 export const getSwtInvariant = () => {
  return swtExchangeContract.methods.invariant().call().then((result, error) => {
     console.log(result, 'invariant')

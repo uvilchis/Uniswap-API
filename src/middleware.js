@@ -10,54 +10,23 @@ export const setGlobalMiddleware = (app) => {
 
 export const uniEventListener = () => {
   setInterval(async() => {
-    var ethInMarket = await listeners.getUniMarketEth();
-    var tokensInMarket = await listeners.getMarketUniTokens();
-    var invariant = await listeners.getUniInvariant();
-    var uniDecimals = 10**18;
-
-   let getTokenCost = (tokenDecimals) => {
-     let ethInDecimals = 0.01;
-     let ethInWei = ethInDecimals*10**18;
-     let fee = ethInWei/500;
-     let newEthInMarket = +ethInMarket + ethInWei - fee;
-     let newTokensInMarket = +invariant/newEthInMarket;
-     let tokensOut = +tokensInMarket - newTokensInMarket;
-     let tokensOutDecimals = tokensOut/tokenDecimals;
-
-     return JSON.stringify(tokensOutDecimals/ethInDecimals)
-   }
-    
-    let ethValueOfToken = getTokenCost(uniDecimals);
-  
+    let uniDecimals = listeners.uniDecimals;
+    let ethInMarket = await listeners.getUniMarketEth();
+    let tokensInMarket = await listeners.getMarketUniTokens();
+    let invariant = await listeners.getUniInvariant();
+    let ethValueOfToken = listeners.getTokenCost(uniDecimals);
     post.postToEvents("UNI", ethInMarket, tokensInMarket, invariant, ethValueOfToken)
-
   }, 15000)
 }
 
-
 export const swtEventListener = () => {
   setInterval(async() => {
-    var ethInMarket = await listeners.getSwtMarketEth();
-    var tokensInMarket = await listeners.getMarketSwtTokens();
-    var invariant = await listeners.getSwtInvariant();
-    var swtDecimals = 10**18;
-    
-    let getTokenCost = (tokenDecimals) => {
-      let ethInDecimals = 0.01;
-      let ethInWei = ethInDecimals*10**18;
-      let fee = ethInWei/500;
-      let newEthInMarket = +ethInMarket + ethInWei - fee;
-      let newTokensInMarket = +invariant/newEthInMarket;
-      let tokensOut = +tokensInMarket - newTokensInMarket;
-      let tokensOutDecimals = tokensOut/tokenDecimals;
- 
-      return JSON.stringify(tokensOutDecimals/ethInDecimals)
-    }
-    
-    let ethValueOfToken = getTokenCost(swtDecimals)
-  
+    let swtDecimals = listeners.swtDecimals;
+    let ethInMarket = await listeners.getSwtMarketEth();
+    let tokensInMarket = await listeners.getMarketSwtTokens();
+    let invariant = await listeners.getSwtInvariant();  
+    let ethValueOfToken = listeners.getTokenCost(swtDecimals)
     post.postToEvents("SWT", ethInMarket, tokensInMarket, invariant, ethValueOfToken)
-
   }, 15000)
 }
 
