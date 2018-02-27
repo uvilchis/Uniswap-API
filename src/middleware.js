@@ -10,7 +10,7 @@ export const setGlobalMiddleware = (app) => {
 
 export const uniEventListener = () => {
   setInterval(async() => {
-    let uniDecimals = 10**18;
+    let uniDecimals = listeners.uniDecimals;
     let ethInMarket = await listeners.getUniMarketEth();
     let tokensInMarket = await listeners.getMarketUniTokens();
     let invariant = await listeners.getUniInvariant();
@@ -21,7 +21,7 @@ export const uniEventListener = () => {
 
 export const swtEventListener = () => {
   setInterval(async() => {
-    let swtDecimals = 10**18;
+    let swtDecimals = listeners.swtDecimals;
     let ethInMarket = await listeners.getSwtMarketEth();
     let tokensInMarket = await listeners.getMarketSwtTokens();
     let invariant = await listeners.getSwtInvariant();  
