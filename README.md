@@ -3,7 +3,7 @@ Powered by Node.JS, MongoDB and GraphQL
 - See the front end here! https://uniswap.io/
 
 # What is it?
-A horizontally scalable database and API, where information about multiple ERC20 tokens can be securely written to and retrieved from. 
+A horizontally scalable database and API, where information about multiple ERC20 token exchange smart contracts can be securely written to and retrieved from. 
 
 # How does it work?
 - A server fires requests to the Ethereum blockchain every 15 seconds for information about ERC20 tokens 
