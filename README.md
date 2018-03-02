@@ -1,4 +1,2 @@
 # Uniswap-API
-A foundation for Uniswap Token data persistence 
-
-
+Powered by Node.JS, MongoDB and GraphQL
