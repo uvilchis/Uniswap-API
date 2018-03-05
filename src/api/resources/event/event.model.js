@@ -6,6 +6,6 @@ const eventSchema = new mongoose.Schema({
     tokensInMarket: String,
     invariant: String, 
     ethValueOfToken: String
-}, { timestamps: true })
+}, { timestamps: true, unique: true })
 
 export const Event = mongoose.model('event', eventSchema);

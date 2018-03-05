@@ -1,26 +1,14 @@
 import { Event } from './event.model';
 
 // add an event 
-const addEvent = (__, {input}) => {
+const addEvent = (__, { input }) => {
   return Event.create(input)
 }
-
-// very prototypical query - events will need to be pulled by symbol, and ordered by time 
-const getEvents = (__,{input}) => {
-  return Event.find({"symbol": input})
+// we we need to modify this function to pull only a specified number of data points 
+// to do that, we might need to modify the Event graphQL model 
+const getEvents = (__, { input }) => {
+  return Event.find({ "symbol": input }).sort({ createdAt: -1 })
 }
-
-// delete an event 
-// FOR TESTING PURPOSES
-// WE WON'T ACTUALLY PROVIDE A WAY TO DELETE EVENTS 
-// const removeEvent = (__, {input}) => {
-//   return Event.findOneAndRemove()
-// }
-
-// we will however, need a function that goes back at the end of each day 
-// and then truncates the four data points from a minute down to one 
-
-// TODO: RETRIEVE EVENTS BY TOKEN BY TIME 
 
 export const eventResolvers = {
   Query: {
