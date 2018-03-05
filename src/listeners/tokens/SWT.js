@@ -9,21 +9,18 @@ export const swtDecimals = 10**18;
 
 export const getSwtInvariant = () => {
  return swtExchangeContract.methods.invariant().call().then((result, error) => {
-    console.log(result, 'invariant')
     return result;
   }).catch(err => console.log(err))
 }
 
 export const getSwtMarketEth = () => {
   return swtExchangeContract.methods.ethInMarket().call().then((result, error) => {
-    console.log(result, 'marketEth')
     return result;
   }).catch(err => console.log(err))
 }
 
-export const getMarketSwtTokens = () => {
+export const getSwtMarketTokens = () => {
   return swtExchangeContract.methods.tokensInMarket().call().then((result, error) => {
-    console.log(result, 'marketTokens')
     return result;
   }).catch(err => console.log(err))
 }
