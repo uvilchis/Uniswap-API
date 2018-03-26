@@ -3,18 +3,18 @@ import axios from 'axios';
 export const query = `mutation addEvent($input:NewEvent!){
   addEvent(input:$input){
     symbol
-    ethInMarket
-    tokensInMarket   
+    ethPool
+    tokenPool   
     invariant     
     ethValueOfToken
   }
 }`;
 
-export const postToEvents = (symbol, ethInMarket, tokensInMarket, invariant, ethValueOfToken) => {
+export const postToEvents = (symbol, ethPool, tokenPool, invariant, ethValueOfToken) => {
   let variables = JSON.stringify({input: {
     symbol: symbol,
-    ethInMarket: ethInMarket,
-    tokensInMarket: tokensInMarket,
+    ethPool: ethPool,
+    tokenPool: tokenPool,
     invariant: invariant,
     ethValueOfToken: ethValueOfToken
   }});
