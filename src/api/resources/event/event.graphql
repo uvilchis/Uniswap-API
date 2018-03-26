@@ -1,7 +1,7 @@
 type Event {
   symbol: String!
-  ethInMarket: String!
-  tokensInMarket: String!
+  ethPool: String!
+  tokenPool: String!
   invariant: String!
   ethValueOfToken: String!
   createdAt: String
@@ -9,8 +9,8 @@ type Event {
 
 input NewEvent {
   symbol: String!
-  ethInMarket: String!
-  tokensInMarket: String!
+  ethPool: String!
+  tokenPool: String!
   invariant: String!
   ethValueOfToken: String!
 }
