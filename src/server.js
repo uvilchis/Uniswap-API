@@ -1,5 +1,5 @@
 import express from 'express';
-import { setGlobalMiddleware, uniEventListener, swtEventListener, startEventListeners } from './middleware';
+import { setGlobalMiddleware, uniEventListener, swtEventListener, createListeners } from './middleware';
 import { graphQLRouter } from './api';
 import { graphiqlExpress } from 'apollo-server-express';
 import { connect } from './db';
@@ -9,7 +9,10 @@ const app = express();
 
 setGlobalMiddleware(app);
 connect();
-startEventListeners();
+// uniEventListener();
+// swtEventListener();
+createListeners();
+
 
 app.use('/graphql', cors(), graphQLRouter);
 app.use('/docs', graphiqlExpress({ endpointURL: '/graphql' }));
