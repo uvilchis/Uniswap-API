@@ -9,6 +9,7 @@ export const contractAndMethodCreator = () => {
   for (let i = 0; i < symbolsAndAddresses.length; i++) {
     let symbol = symbolsAndAddresses[i][0];
     let exchangeAddress = symbolsAndAddresses[i][1];
+    let decimals = symbolsAndAddresses[i][2];
     let exchangeContract = new web3.eth.Contract(exchangeABI, exchangeAddress);
     
     let getInvariant = () => {
@@ -29,7 +30,7 @@ export const contractAndMethodCreator = () => {
       }).catch(err => console.log(err))
     }
     
-    contractsAndMethods[symbol] = { exchangeContract, getInvariant, getEthPool, getTokenPool };
+    contractsAndMethods[symbol] = { exchangeContract, getInvariant, getEthPool, getTokenPool, decimals };
 
   }
 
