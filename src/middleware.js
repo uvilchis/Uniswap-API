@@ -15,7 +15,7 @@ export const createListeners = () => {
   for (let symbol in contractsAndMethods) {
     let token = contractsAndMethods[symbol];
     setInterval(async() => {
-      let decimals = 10**18;
+      let decimals = token.decimals;
       let ethPool = await token.getEthPool();
       let tokenPool = await token.getTokenPool();
       let invariant = await token.getInvariant();
@@ -24,3 +24,4 @@ export const createListeners = () => {
     }, 30000);
   }
 }
+
