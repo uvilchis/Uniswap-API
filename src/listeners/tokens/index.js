@@ -1,5 +1,4 @@
-export * from './UNI'
-export * from './SWT'
+export { contractAndMethodCreator } from './contractsAndMethods';
 
 export const getTokenCost = (tokenDecimals, ethInMarket, tokensInMarket, invariant) => {
     let ethInDecimals = 0.01;
