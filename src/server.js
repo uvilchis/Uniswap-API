@@ -9,8 +9,6 @@ const app = express();
 
 setGlobalMiddleware(app);
 connect();
-// uniEventListener();
-// swtEventListener();
 createListeners();
 
 
