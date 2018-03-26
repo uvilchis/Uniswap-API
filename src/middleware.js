@@ -8,8 +8,9 @@ export const setGlobalMiddleware = (app) => {
   app.use(bodyParser.json());
 }
 
+// we create the object holding the token contracts and functions
 const contractsAndMethods = listeners.contractAndMethodCreator();
-// you now want to create a listener for each of the functions 
+// then we loop over the object and set an interval for the functions to fire and write to the database
 export const createListeners = () => {
   for (let symbol in contractsAndMethods) {
     let token = contractsAndMethods[symbol];
@@ -20,6 +21,6 @@ export const createListeners = () => {
       let invariant = await token.getInvariant();
       let ethValueOfToken = listeners.getTokenCost(decimals, ethPool, tokenPool, invariant);
       post.postToEvents(symbol, ethPool, tokenPool, invariant, ethValueOfToken);
-    }, 3000);
+    }, 30000);
   }
 }

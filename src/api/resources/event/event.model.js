@@ -2,8 +2,8 @@ import mongoose from 'mongoose';
 
 const eventSchema = new mongoose.Schema({
     symbol: String, 
-    ethInMarket: String,
-    tokensInMarket: String,
+    ethPool: String,
+    tokenPool: String,
     invariant: String, 
     ethValueOfToken: String
 }, { timestamps: true, unique: true })

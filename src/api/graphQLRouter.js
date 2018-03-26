@@ -24,8 +24,6 @@ export const schema = makeExecutableSchema({
   )
 })
 
-// hypothesis: the arguments go here, and they are being parsed off the req object 
-// i need to pass the arguments into here somehow
 export const graphQLRouter = graphqlExpress((req) => ({
   schema,
   context: {
