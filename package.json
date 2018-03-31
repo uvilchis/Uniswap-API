@@ -4,7 +4,7 @@
   "description": "The foundation for Uniswap coin information data persistence ",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config webpack.config.js --watch",
+    "start": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "uvilchis",
