@@ -58,6 +58,5 @@ typings/
 .env
 
 # stuff I don't want uploaded
-**/key.js
 dist 
 .webpack
