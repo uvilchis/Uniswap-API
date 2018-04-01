@@ -19,7 +19,7 @@ export const postToEvents = (symbol, ethPool, tokenPool, invariant, ethValueOfTo
     ethValueOfToken: ethValueOfToken
   }});
   
-  axios.post('ec2-18-233-168-186.compute-1.amazonaws.com:3000/graphql', {
+  axios.post('http://ec2-18-233-168-186.compute-1.amazonaws.com:3000/graphql', {
     query: query,
     variables: variables
   }).then((res) => console.log(res.data, 'post confirmed'))
