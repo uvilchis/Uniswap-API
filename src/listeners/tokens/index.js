@@ -11,4 +11,3 @@ export const getTokenCost = (tokenDecimals, ethPool, tokenPool, invariant) => {
     let tokensOutDecimals = tokensOut/tokenDecimals;
     return JSON.stringify(ethInDecimals/tokensOutDecimals)
 }
-
