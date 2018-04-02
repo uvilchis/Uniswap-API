@@ -1,12 +1,23 @@
 import http from 'http'
+import https from 'https'
+import fs from 'fs';
 // import { execute, subscribe } from 'graphql'
 import { createServer } from 'http'
 
 import app from './server'
 // import schema from './schema'
+const options = {
+  key: fs.readFileSync('./src/env/privkey.pem'),
+  cert: fs.readFileSync('./src/env/fullchain.pem')
+}
 
+const secureServer = https.createServer(options, app)
 const server = http.createServer(app)
 let currentApp = app
+
+secureServer.listen(443, () => {
+  console.log('Secure server listening on port 443')
+})
 
 server.listen(3000, () => {
   console.log('Server listening on port 3000')
