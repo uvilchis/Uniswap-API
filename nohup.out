@@ -1,0 +1,100 @@
+
+> uniswap-api@1.0.0 start /home/ec2-user/Uniswap-API
+> webpack --watch
+
+
+Webpack is watching the files…
+
+Hash: 2a2be8b7724f39be39aa
+Version: webpack 3.11.0
+Time: 1169ms
+        Asset     Size  Chunks             Chunk Names
+    server.js  70.5 kB       0  [emitted]  main
+server.js.map  75.5 kB       0  [emitted]  main
+[./node_modules/webpack/hot/log-apply-result.js] (webpack)/hot/log-apply-result.js 1.31 kB {0} [built]
+[./node_modules/webpack/hot/log.js] (webpack)/hot/log.js 1.04 kB {0} [built]
+[./node_modules/webpack/hot/poll.js?1000] (webpack)/hot/poll.js?1000 1.16 kB {0} [built]
+[./src/api/graphQLRouter.js] ./src/api/graphQLRouter.js 653 bytes {0} [built]
+[./src/api/index.js] ./src/api/index.js 48 bytes {0} [built]
+[./src/api/requests/index.js] ./src/api/requests/index.js 23 bytes {0} [built]
+[./src/api/resources/event/index.js] ./src/api/resources/event/index.js 177 bytes {0} [built]
+[./src/api/resources/token/index.js] ./src/api/resources/token/index.js 180 bytes {0} [built]
+[./src/db.js] ./src/db.js 313 bytes {0} [built]
+   [0] multi webpack/hot/poll?1000 ./src/index 40 bytes {0} [built]
+[./src/env/key.js] ./src/env/key.js 164 bytes {0} [built]
+[./src/index.js] ./src/index.js 3.06 kB {0} [built]
+[./src/listeners/index.js] ./src/listeners/index.js 56 bytes {0} [built]
+[./src/middleware.js] ./src/middleware.js 2.02 kB {0} [built]
+[./src/server.js] ./src/server.js 563 bytes {0} [built]
+    + 26 hidden modules
+Server listening on port 3000
+ethPool =  30158344475558644644  tokenPool =  1902779986517217612792  invariant =  57384694294585082133893205990442011056736
+ethPool =  27290825991871733979  tokenPool =  25366766114231493875  invariant =  692280000000000000000000000000000000000
+ethPool =  36180868649822144617  tokenPool =  65080352015501292404841  invariant =  2354663667957040133471303040836992012890897
+ethPool =  38026371462472848372  tokenPool =  23667785418027186003830  invariant =  900000000000000000000000000000000000000000
+{ data: 
+   { addEvent: 
+      { symbol: 'OMG',
+        ethPool: '30158344475558644644',
+        tokenPool: '1902779986517217612792',
+        invariant: '57384694294585082133893205990442011056736',
+        ethValueOfToken: '0.015886640732943803' } } } 'post confirmed'
+{ data: 
+   { addEvent: 
+      { symbol: 'MKR',
+        ethPool: '27290825991871733979',
+        tokenPool: '25366766114231493875',
+        invariant: '692280000000000000000000000000000000000',
+        ethValueOfToken: '1.0783998599876445' } } } 'post confirmed'
+{ data: 
+   { addEvent: 
+      { symbol: 'BAT',
+        ethPool: '36180868649822144617',
+        tokenPool: '65080352015501292404841',
+        invariant: '2354663667957040133471303040836992012890897',
+        ethValueOfToken: '0.0005572092694270897' } } } 'post confirmed'
+{ data: 
+   { addEvent: 
+      { symbol: 'ZRX',
+        ethPool: '38026371462472848372',
+        tokenPool: '23667785418027186003830',
+        invariant: '900000000000000000000000000000000000000000',
+        ethValueOfToken: '0.0016103144397562254' } } } 'post confirmed'
+ethPool =  35964781267444821558  tokenPool =  12596682330507297147719  invariant =  453036924712182018924991948819143636633487
+{ data: 
+   { addEvent: 
+      { symbol: 'DAI',
+        ethPool: '35964781267444821558',
+        tokenPool: '12596682330507297147719',
+        invariant: '453036924712182018924991948819143636633487',
+        ethValueOfToken: '0.0028616149896951693' } } } 'post confirmed'
+
+> uniswap-api@1.0.0 start /home/ec2-user/Uniswap-API
+> webpack --watch
+
+
+Webpack is watching the files…
+
+Hash: 2a2be8b7724f39be39aa
+Version: webpack 3.11.0
+Time: 1170ms
+        Asset     Size  Chunks             Chunk Names
+    server.js  70.5 kB       0  [emitted]  main
+server.js.map  75.5 kB       0  [emitted]  main
+[./node_modules/webpack/hot/log-apply-result.js] (webpack)/hot/log-apply-result.js 1.31 kB {0} [built]
+[./node_modules/webpack/hot/log.js] (webpack)/hot/log.js 1.04 kB {0} [built]
+[./node_modules/webpack/hot/poll.js?1000] (webpack)/hot/poll.js?1000 1.16 kB {0} [built]
+[./src/api/graphQLRouter.js] ./src/api/graphQLRouter.js 653 bytes {0} [built]
+[./src/api/index.js] ./src/api/index.js 48 bytes {0} [built]
+[./src/api/requests/index.js] ./src/api/requests/index.js 23 bytes {0} [built]
+[./src/api/resources/event/index.js] ./src/api/resources/event/index.js 177 bytes {0} [built]
+[./src/api/resources/token/index.js] ./src/api/resources/token/index.js 180 bytes {0} [built]
+[./src/db.js] ./src/db.js 313 bytes {0} [built]
+   [0] multi webpack/hot/poll?1000 ./src/index 40 bytes {0} [built]
+[./src/env/key.js] ./src/env/key.js 164 bytes {0} [built]
+[./src/index.js] ./src/index.js 3.06 kB {0} [built]
+[./src/listeners/index.js] ./src/listeners/index.js 56 bytes {0} [built]
+[./src/middleware.js] ./src/middleware.js 2.02 kB {0} [built]
+[./src/server.js] ./src/server.js 563 bytes {0} [built]
+    + 26 hidden modules
+Server listening on port 3000
