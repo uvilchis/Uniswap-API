@@ -16,7 +16,7 @@ const server = http.createServer(app)
 let currentApp = app
 
 secureServer.listen(4000, () => {
-  console.log('Secure server listening on port 443')
+  console.log('Secure server listening on port 4000')
 })
 
 server.listen(3000, () => {
