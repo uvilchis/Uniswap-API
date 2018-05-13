@@ -16,7 +16,7 @@ input NewEvent {
 }
 
 extend type Query {
-  Event(input: String!): [Event]!
+  Event(input: String!, limit: Int): [Event]!
 }
 
 extend type Mutation {

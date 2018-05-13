@@ -11,13 +11,13 @@ const options = {
   cert: fs.readFileSync('./src/env/fullchain.pem')
 }
 
-const secureServer = https.createServer(options, app)
+// const secureServer = https.createServer(options, app)
 const server = http.createServer(app)
 let currentApp = app
 
-secureServer.listen(4000, () => {
-  console.log('Secure server listening on port 443')
-})
+// secureServer.listen(4000, () => {
+//   console.log('Secure server listening on port 4000')
+// })
 
 server.listen(3000, () => {
   console.log('Server listening on port 3000')

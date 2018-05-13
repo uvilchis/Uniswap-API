@@ -11,7 +11,6 @@ setGlobalMiddleware(app);
 connect();
 createListeners();
 
-
 app.use('/graphql', cors(), graphQLRouter);
 app.use('/docs', graphiqlExpress({ endpointURL: '/graphql' }));
 
