@@ -60,3 +60,4 @@ typings/
 # stuff I don't want uploaded
 dist 
 .webpack
+nohup.out

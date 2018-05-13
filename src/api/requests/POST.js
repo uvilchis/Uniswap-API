@@ -23,7 +23,7 @@ export const postToEvents = (symbol, ethPool, tokenPool, invariant, ethValueOfTo
     query: query,
     variables: variables
   }).then((res) => console.log(res.data, 'post confirmed'))
-  .catch(err => console.log(err.data, 'ERROR '))
+  .catch(err => console.log(err, 'ERROR '))
 
 }
 
